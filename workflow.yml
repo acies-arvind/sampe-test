@@ -1,0 +1,15 @@
+name: "Deploy CloudFormation Stack"
+on: 
+  push:
+    branches:
+    - feature/gluejob_complex
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure AWS Credentials
+      uses: fuller-inc/actions-aws-assume-role@v1
+      with:
+        aws-region: us-east-1
+        role-to-assume: arn:aws:iam::372544872383:role/github-test-role
