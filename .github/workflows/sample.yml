@@ -17,4 +17,5 @@ jobs:
       uses: fuller-inc/actions-aws-assume-role@v1
       with:
         aws-region: us-east-1
-        role-to-assume: arn:aws:iam::372544872383:role/git-test-role
+        aws-access-key-id: AKIAVNPLHT67VNZRQNJK
+        aws-secret-access-key: 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
