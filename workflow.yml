@@ -2,7 +2,7 @@ name: "Deploy CloudFormation Stack"
 on: 
   push:
     branches:
-    - feature/gluejob_complex
+    - main
 
 jobs:
   deploy:
