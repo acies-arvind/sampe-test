@@ -17,7 +17,6 @@ jobs:
         role-to-assume: arn:aws:iam::372544872383:role/git-test-role
     - name: Create folder in S3
       run: |
-        mkdir -p myNewFolder/myNewSubFolder && cp -R dist myNewFolder/myNewSubFolder
-        ls myNewFolder/MyNewSubFolder
+        mkdir -p myNewFolder/myNewSubFolder
     - name: Deploy to S3
       run: aws s3 sync ./git/ s3://our-s3-bucket
