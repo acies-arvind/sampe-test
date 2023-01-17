@@ -16,4 +16,4 @@ jobs:
         aws-region: us-east-1
         role-to-assume: arn:aws:iam::372544872383:role/git-test-role
     - name: Deploy to S3
-      run: aws s3 sync ./sampe-test/. s3://our-s3-bucket/git-code
+      run: aws s3 sync ./github/workflows s3://our-s3-bucket/git-code
