@@ -19,4 +19,4 @@ jobs:
       run: |
         mkdir -p gdb-scripts/
     - name: Deploy to S3
-      run: aws s3 sync gdb-scripts s3://our-s3-bucket/hem-test
+      run: aws s3 sync sampe-test s3://our-s3-bucket/hem-test
