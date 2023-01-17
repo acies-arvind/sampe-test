@@ -16,9 +16,4 @@ jobs:
         aws-region: us-east-1
         role-to-assume: arn:aws:iam::372544872383:role/git-test-role
     - name: Deploy to S3
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
-      env:
-        aws_bucket: our-s3-bucket
-        SOURCE_DIR: './git'
+      run: aws s3 sync ./git/ s3://our-s3-bucket
