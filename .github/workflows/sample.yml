@@ -15,10 +15,10 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: arn:aws:iam::372544872383:role/git-test-role
-
-    # - name: Configure AWS Credentials
-    #   uses: aws-actions/configure-aws-credentials@v1
-    #   with:
-    #     aws-region: us-east-1
-    #     aws-access-key-id: AKIAVNPLHT67VNZRQNJK
-    #     aws-secret-access-key: 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
+    - name: Deploy to S3
+    - uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
+      env:
+        aws_bucket: our-s3-bucket
+        SOURCE_DIR: './git'
